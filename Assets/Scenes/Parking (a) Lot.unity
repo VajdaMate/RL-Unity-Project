@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,7 +210,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52594219}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 11
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -243,9 +243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SensorName: RayPerceptionSensor
   m_DetectableTags: []
-  m_RaysPerDirection: 15
+  m_RaysPerDirection: 21
   m_MaxRayDegrees: 180
-  m_SphereCastRadius: 0.5
+  m_SphereCastRadius: 0.34
   m_RayLength: 17
   m_RayLayerMask:
     serializedVersion: 2
@@ -255,6 +255,87 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 0
+--- !u!114 &52594222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52594219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0786718925d2b474b9040e23b062fa5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 1000
+--- !u!114 &52594223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52594219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &52594225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52594219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 0
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 2
+      BranchSizes: 
+    VectorActionSize: 02000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 1
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: My Behavior
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
+--- !u!65 &52594227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52594219}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 1, z: 4.5}
+  m_Center: {x: 0, y: 0, z: -0.2}
 --- !u!1 &212311317
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +347,7 @@ GameObject:
   - component: {fileID: 212311318}
   m_Layer: 0
   m_Name: Parked Cars
-  m_TagString: Untagged
+  m_TagString: Parked Cars
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -542,7 +623,7 @@ GameObject:
   - component: {fileID: 278643681}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1243,13 +1324,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 1.81, z: -17.6}
+  m_LocalRotation: {x: -0.2762886, y: 0.65089524, z: -0.2762886, w: -0.65089524}
+  m_LocalPosition: {x: 17.463, y: 12.916, z: 0.558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 46, y: 270, z: 0}
 --- !u!1001 &972260635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1952,6 +2033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Car
       objectReference: {fileID: 0}
+    - target: {fileID: 2672864514906475514, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 3386637255398372702, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -1966,15 +2051,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3386637255398372702, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.28
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3386637255398372702, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3386637255398372702, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.45
+      value: -11.3
       objectReference: {fileID: 0}
     - target: {fileID: 3386637255398372702, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2014,6 +2099,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2672864514906475514, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 52594220}
+    - targetCorrespondingSourceObject: {fileID: 2672864514906475514, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52594225}
+    - targetCorrespondingSourceObject: {fileID: 2672864514906475514, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52594223}
+    - targetCorrespondingSourceObject: {fileID: 2672864514906475514, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52594222}
+    - targetCorrespondingSourceObject: {fileID: 2672864514906475514, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52594227}
     - targetCorrespondingSourceObject: {fileID: 124385490894283826, guid: 22c9c216bad815c41ab718efa15f912b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 953301623}
