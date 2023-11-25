@@ -1,5 +1,5 @@
 behaviors:
-  DodgeTheBall:
+  Park:
     trainer_type: ppo
     time_horizon: 128
     max_steps: 1e6

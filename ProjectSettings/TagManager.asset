@@ -7,6 +7,7 @@ TagManager:
   - Parked Cars
   - Wall
   - Car
+  - Goal
   layers:
   - Default
   - TransparentFX

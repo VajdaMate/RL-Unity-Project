@@ -7,9 +7,9 @@ using Unity.MLAgents.Sensors;
 
 public class CarController : Agent
 {
-    private Vector3 startingPosition = new Vector3(2, 1, -11);
-    private float accelerationSpeed = 300;
-    private float steeringSpeed = 300;
+    private float accelerationSpeed = 275f;
+    private float steeringSpeed = 250f;
+    public Transform TargetTransform;
     private Rigidbody rb;
 
 
@@ -21,7 +21,7 @@ public class CarController : Agent
 
     private void FixedUpdate()
     {
-        float moveInput = 0f;
+        /*float moveInput = 0f;
         float steerInput = 0f;
 
         // Forward/Backward Movement
@@ -36,25 +36,22 @@ public class CarController : Agent
         else if (Input.GetKey("d"))
             steerInput = 1f;
 
-
-        //Másik megoldás
-        // Move the car forward/backward
-        //transform.Translate(Vector3.forward * moveInput * moveSpeed * Time.deltaTime);
-
-        // Rotate the car left/right
-        //transform.Rotate(Vector3.up * rotateInput * turnSpeed * Time.deltaTime);
-
-
         Vector3 forwardForce = transform.forward * moveInput * accelerationSpeed;
         rb.AddForce(forwardForce);
 
         // Apply steering torque
         float turnTorque = steerInput * steeringSpeed;
         rb.AddTorque(transform.up * turnTorque);
+        
+        //Másik megoldás
+        //transform.Translate(Vector3.forward * moveInput * moveSpeed * Time.deltaTime);
+        //transform.Rotate(Vector3.up * rotateInput * turnSpeed * Time.deltaTime);
+        */
+
     }
     public override void OnEpisodeBegin()
     {
-       
+        transform.localPosition = new Vector3(10f, 1f, 5f);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -65,7 +62,25 @@ public class CarController : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-       
+        var actionTaken = actions.ContinuousActions;
+
+        float actionSpeed = actionTaken[0];
+        float actionSteering = actionTaken[1];
+
+
+        Vector3 forwardForce = transform.forward * actionSpeed * accelerationSpeed;
+        rb.AddForce(forwardForce);
+
+        float turnTorque = actionSteering * steeringSpeed;
+        rb.AddTorque(transform.up * turnTorque);
+
+        float distance_scaled = Vector3.Distance(TargetTransform.localPosition, transform.localPosition);
+        //Debug.Log(distance_scaled);
+
+        AddReward(-distance_scaled / 10); // [0, 0.1]
+
+        //transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
+        //transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 180, 0));
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -73,22 +88,20 @@ public class CarController : Agent
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
 
         // Reset actions
-        continuousActions[0] = 0f;
-        continuousActions[1] = 0f;
+        continuousActions[0] = 0f; // Speed
+        continuousActions[1] = 0f; // Turning
 
-        // Forward / Backward
+        // Forward/Backward Movement
         if (Input.GetKey("w"))
-            continuousActions[0] = Mathf.MoveTowards(continuousActions[0], 1f, Time.deltaTime * accelerationSpeed);
+            continuousActions[0] = 1f;
         else if (Input.GetKey("s"))
-            continuousActions[0] = Mathf.MoveTowards(continuousActions[0], -1f, Time.deltaTime * accelerationSpeed);
+            continuousActions[0] = -1f;
 
-        // Left / Right
+        // Left/Right Steering
         if (Input.GetKey("a"))
-            continuousActions[1] = Mathf.MoveTowards(continuousActions[1], -1f, Time.deltaTime * steeringSpeed);
+            continuousActions[1] = -1f;
         else if (Input.GetKey("d"))
-            continuousActions[1] = Mathf.MoveTowards(continuousActions[1], 1f, Time.deltaTime * steeringSpeed);
-
-
+            continuousActions[1] = 1f;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -101,6 +114,11 @@ public class CarController : Agent
         else if (collision.collider.tag == "Car")
         {
             AddReward(-1);
+            EndEpisode();
+        }
+        if (collision.collider.tag == "Goal")
+        {
+            AddReward(10);
             EndEpisode();
         }
     }
