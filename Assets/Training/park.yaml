@@ -2,7 +2,7 @@ behaviors:
   Park:
     trainer_type: ppo
     time_horizon: 256
-    max_steps: 1e6
+    max_steps: 1e7
     hyperparameters:
       learning_rate: 1e-3
       batch_size: 1024
