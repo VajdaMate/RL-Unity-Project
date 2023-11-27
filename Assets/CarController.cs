@@ -59,6 +59,7 @@ public class CarController : Agent
     public override void OnEpisodeBegin()
     {
         transform.localPosition = new Vector3(6f, 0.5351701f, 4f);
+        currentCheckpoint = CheckPoint1;
     }
 
     public override void CollectObservations(VectorSensor sensor)

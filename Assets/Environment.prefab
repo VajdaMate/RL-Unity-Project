@@ -2556,7 +2556,7 @@ GameObject:
   - component: {fileID: 6997946552666719530}
   m_Layer: 0
   m_Name: Checkpoint1
-  m_TagString: Checkpoint1
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2609,7 +2609,7 @@ GameObject:
   - component: {fileID: 5121837503210988729}
   m_Layer: 0
   m_Name: Checkpoint2
-  m_TagString: Checkpoint1
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
