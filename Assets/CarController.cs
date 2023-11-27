@@ -8,65 +8,48 @@ using Unity.MLAgents.Sensors;
 public class CarController : Agent
 {
     
-    public Transform CheckPoint1;
-    public Transform CheckPoint2;
+    public Transform CheckPoint;
     public Transform Goal;
 
 
     private float accelerationSpeed = 275f;
     private float steeringSpeed = 250f;
-    private Transform currentCheckpoint;
     private Rigidbody rb;
+    
+    
     private Vector3 startingPosition = new Vector3(6f, 0.5351701f, 4f);
+    private List<Vector3> checkpointPositions = new List<Vector3>
+    {
+        new Vector3(3.8f, 0.6f, -10.49f),
+        new Vector3(-2.58f, 0.6f, -10.49f),
+    };
+    private int atCheckpoint = 0;
 
 
     // Start is called before the first frame update
     void Start()    
     {
         rb = GetComponent<Rigidbody>();
-        currentCheckpoint = CheckPoint1;
+        
     }
 
     private void FixedUpdate()
     {
-        /*float moveInput = 0f;
-        float steerInput = 0f;
-
-        // Forward/Backward Movement
-        if (Input.GetKey("w"))
-            moveInput = 1f;
-        else if (Input.GetKey("s"))
-            moveInput = -1f;
-
-        // Left/Right Steering
-        if (Input.GetKey("a"))
-            steerInput = -1f;
-        else if (Input.GetKey("d"))
-            steerInput = 1f;
-
-        Vector3 forwardForce = transform.forward * moveInput * accelerationSpeed;
-        rb.AddForce(forwardForce);
-
-        // Apply steering torque
-        float turnTorque = steerInput * steeringSpeed;
-        rb.AddTorque(transform.up * turnTorque);
-        
-        //M�sik megold�s
-        //transform.Translate(Vector3.forward * moveInput * moveSpeed * Time.deltaTime);
-        //transform.Rotate(Vector3.up * rotateInput * turnSpeed * Time.deltaTime);
-        */
-
+   
     }
     public override void OnEpisodeBegin()
     {
         transform.localPosition = startingPosition;
-        currentCheckpoint = CheckPoint1;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        atCheckpoint = 0;
+        CheckPoint.localPosition = checkpointPositions[atCheckpoint];
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(currentCheckpoint.localPosition);
-        sensor.AddObservation(Vector3.Distance(currentCheckpoint.localPosition, transform.localPosition));
+        sensor.AddObservation(transform.localPosition);
+        sensor.AddObservation(CheckPoint.localPosition);
+        sensor.AddObservation(Vector3.Distance(CheckPoint.localPosition, transform.localPosition));
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -83,7 +66,7 @@ public class CarController : Agent
         float turnTorque = actionSteering * steeringSpeed;
         rb.AddTorque(transform.up * turnTorque);
 
-        float distance = Vector3.Distance(currentCheckpoint.localPosition, transform.localPosition);
+        float distance = Vector3.Distance(CheckPoint.localPosition, transform.localPosition);
         
 
         //transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
@@ -117,12 +100,12 @@ public class CarController : Agent
     {
         if (collision.collider.tag == "Wall")
         {
-            AddReward(-1000);
+            AddReward(-200);
             EndEpisode();
         }
         else if (collision.collider.tag == "Parked Cars")
         {
-            AddReward(-1000);
+            AddReward(-200);
             EndEpisode();
         }
         
@@ -138,14 +121,15 @@ public class CarController : Agent
     {
         if (collider.tag == "Checkpoint")
         {
-            AddReward(80);
-            if (currentCheckpoint == CheckPoint1)
+            AddReward(50);
+            atCheckpoint++;
+            if (atCheckpoint==1)
             {
-                currentCheckpoint = CheckPoint2;
+                CheckPoint.localPosition = checkpointPositions[1];
             }
-            else if (currentCheckpoint == CheckPoint2)
+            else
             {
-                currentCheckpoint = Goal;
+                CheckPoint = Goal;
             }
         }
     }
