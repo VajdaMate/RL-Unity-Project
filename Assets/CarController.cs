@@ -131,6 +131,10 @@ public class CarController : Agent
             AddReward(100);
             EndEpisode();
         }
+        
+    }
+    private void OnTriggerEnter(Collision collision)
+    {
         if (collision.collider.tag == "Checkpoint1")
         {
             AddReward(80);
@@ -143,7 +147,5 @@ public class CarController : Agent
                 currentCheckpoint = Goal;
             }
         }
-
-
     }
 }
