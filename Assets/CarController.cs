@@ -17,6 +17,7 @@ public class CarController : Agent
     private float steeringSpeed = 250f;
     private Transform currentCheckpoint;
     private Rigidbody rb;
+    private Vector3 startingPosition = new Vector3(6f, 0.5351701f, 4f);
 
 
     // Start is called before the first frame update
@@ -58,7 +59,7 @@ public class CarController : Agent
     }
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = new Vector3(6f, 0.5351701f, 4f);
+        transform.localPosition = startingPosition;
         currentCheckpoint = CheckPoint1;
     }
 
