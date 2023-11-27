@@ -7,9 +7,15 @@ using Unity.MLAgents.Sensors;
 
 public class CarController : Agent
 {
+    
+    public Transform CheckPoint1;
+    public Transform CheckPoint2;
+    public Transform Goal;
+
+
     private float accelerationSpeed = 275f;
     private float steeringSpeed = 250f;
-    public Transform TargetTransform;
+    private Transform currentCheckpoint;
     private Rigidbody rb;
 
 
@@ -17,6 +23,7 @@ public class CarController : Agent
     void Start()    
     {
         rb = GetComponent<Rigidbody>();
+        currentCheckpoint = CheckPoint1;
     }
 
     private void FixedUpdate()
@@ -56,8 +63,8 @@ public class CarController : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(TargetTransform.localPosition);
-        sensor.AddObservation(Vector3.Distance(TargetTransform.localPosition, transform.localPosition));
+        sensor.AddObservation(currentCheckpoint.localPosition);
+        sensor.AddObservation(Vector3.Distance(currentCheckpoint.localPosition, transform.localPosition));
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -74,7 +81,7 @@ public class CarController : Agent
         float turnTorque = actionSteering * steeringSpeed;
         rb.AddTorque(transform.up * turnTorque);
 
-        float distance = Vector3.Distance(TargetTransform.localPosition, transform.localPosition);
+        float distance = Vector3.Distance(currentCheckpoint.localPosition, transform.localPosition);
         
 
         //transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
@@ -108,18 +115,33 @@ public class CarController : Agent
     {
         if (collision.collider.tag == "Wall")
         {
-            AddReward(-100);
+            AddReward(-200);
             EndEpisode();
         }
         else if (collision.collider.tag == "Parked Cars")
         {
-            AddReward(-100);
+            AddReward(-200);
             EndEpisode();
         }
+        
         if (collision.collider.tag == "Goal")
         {
             AddReward(100);
             EndEpisode();
         }
+        if (collision.collider.tag == "Checkpoint1")
+        {
+            AddReward(20);
+            if (currentCheckpoint == CheckPoint1)
+            {
+                currentCheckpoint = CheckPoint2;
+            }
+            else if (currentCheckpoint == CheckPoint2)
+            {
+                currentCheckpoint = Goal;
+            }
+        }
+
+
     }
 }
