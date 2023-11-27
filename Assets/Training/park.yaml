@@ -25,4 +25,4 @@ behaviors:
     summary_freq: 50000
     threaded: true
 torch_settings:
-  device: cuda
+  device: cpu
