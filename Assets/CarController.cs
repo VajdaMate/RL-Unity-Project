@@ -80,7 +80,7 @@ public class CarController : Agent
         //transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
         //transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 180, 0));
 
-        AddReward(-distance / 10); // [0, 0.1]
+        AddReward(-distance / 100); // [0, 0.1]
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -108,17 +108,17 @@ public class CarController : Agent
     {
         if (collision.collider.tag == "Wall")
         {
-            AddReward(-1);
+            AddReward(-10);
             EndEpisode();
         }
         else if (collision.collider.tag == "Parked Cars")
         {
-            AddReward(-1);
+            AddReward(-10);
             EndEpisode();
         }
         if (collision.collider.tag == "Goal")
         {
-            AddReward(10);
+            AddReward(100);
             EndEpisode();
         }
     }

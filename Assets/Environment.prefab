@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2201078111455770544}
   m_Layer: 0
   m_Name: fence_b_straight
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 8219117252100856623}
   m_Layer: 0
   m_Name: fence_b_straight (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 6735230480863536340}
   m_Layer: 0
   m_Name: fence_b_corner (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 1220200364285040742}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 6225428034385254402}
   m_Layer: 0
   m_Name: fence_b_corner (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 2050487218773613195}
   m_Layer: 0
   m_Name: fence_b_corner (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 4796038482601294828}
   m_Layer: 0
   m_Name: fence_b_straight (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1242,7 +1242,7 @@ GameObject:
   - component: {fileID: 2014000559832535034}
   m_Layer: 0
   m_Name: fence_b_straight (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1325,7 +1325,7 @@ GameObject:
   - component: {fileID: 6498802837950446471}
   m_Layer: 0
   m_Name: fence_b_corner
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 4862363845184984074}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 3381661849704538484}
   m_Layer: 0
   m_Name: fence_b_straight (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1708,7 +1708,7 @@ GameObject:
   - component: {fileID: 4210460741412599896}
   m_Layer: 0
   m_Name: fence_b_straight (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1792,7 +1792,7 @@ GameObject:
   - component: {fileID: 7021110239618648074}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1896,7 +1896,7 @@ GameObject:
   - component: {fileID: 3874019885772072339}
   m_Layer: 0
   m_Name: fence_b_straight
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1979,7 +1979,7 @@ GameObject:
   - component: {fileID: 8230637226054210450}
   m_Layer: 0
   m_Name: fence_b_straight (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2062,7 +2062,7 @@ GameObject:
   - component: {fileID: 5433469266255734526}
   m_Layer: 0
   m_Name: fence_b_straight (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2438,7 +2438,7 @@ GameObject:
   - component: {fileID: 563930839164599311}
   m_Layer: 0
   m_Name: fence_b_straight (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2718,7 +2718,7 @@ GameObject:
   - component: {fileID: 7515241380620557712}
   m_Layer: 0
   m_Name: fence_b_straight (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2801,7 +2801,7 @@ GameObject:
   - component: {fileID: 6986263731374429895}
   m_Layer: 0
   m_Name: fence_b_straight (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2884,7 +2884,7 @@ GameObject:
   - component: {fileID: 7475140386647313767}
   m_Layer: 0
   m_Name: fence_b_straight (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 1088164026171969402}
   m_Layer: 0
   m_Name: fence_b_straight (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3050,7 +3050,7 @@ GameObject:
   - component: {fileID: 580556800437792539}
   m_Layer: 0
   m_Name: fence_b_straight (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3225,7 +3225,7 @@ GameObject:
   - component: {fileID: 5968764847731210831}
   m_Layer: 0
   m_Name: fence_b_straight (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3494,7 +3494,7 @@ GameObject:
   - component: {fileID: 3021007781373384508}
   m_Layer: 0
   m_Name: fence_b_straight (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3578,7 +3578,7 @@ GameObject:
   - component: {fileID: 3280156375080958167}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3682,7 +3682,7 @@ GameObject:
   - component: {fileID: 27293530597636215}
   m_Layer: 0
   m_Name: fence_b_straight (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
