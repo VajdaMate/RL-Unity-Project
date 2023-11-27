@@ -111,7 +111,7 @@ public class CarController : Agent
             AddReward(-1);
             EndEpisode();
         }
-        else if (collision.collider.tag == "Car")
+        else if (collision.collider.tag == "Parked Cars")
         {
             AddReward(-1);
             EndEpisode();
