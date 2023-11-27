@@ -56,8 +56,8 @@ public class CarController : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        //3D Rayperception miatt nem kéne, de itthagyom a struktúra miatt
-        //transform.localPosition = startingPosition;
+        sensor.AddObservation(TargetTransform.localPosition);
+        sensor.AddObservation(Vector3.Distance(TargetTransform.localPosition, transform.localPosition));
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -74,13 +74,13 @@ public class CarController : Agent
         float turnTorque = actionSteering * steeringSpeed;
         rb.AddTorque(transform.up * turnTorque);
 
-        float distance_scaled = Vector3.Distance(TargetTransform.localPosition, transform.localPosition);
-        //Debug.Log(distance_scaled);
-
-        AddReward(-distance_scaled / 10); // [0, 0.1]
+        float distance = Vector3.Distance(TargetTransform.localPosition, transform.localPosition);
+        
 
         //transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
         //transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 180, 0));
+
+        AddReward(-distance / 10); // [0, 0.1]
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
