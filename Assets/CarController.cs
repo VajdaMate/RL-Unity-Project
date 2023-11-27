@@ -117,12 +117,12 @@ public class CarController : Agent
     {
         if (collision.collider.tag == "Wall")
         {
-            AddReward(-200);
+            AddReward(-1000);
             EndEpisode();
         }
         else if (collision.collider.tag == "Parked Cars")
         {
-            AddReward(-200);
+            AddReward(-1000);
             EndEpisode();
         }
         
@@ -133,7 +133,7 @@ public class CarController : Agent
         }
         if (collision.collider.tag == "Checkpoint1")
         {
-            AddReward(20);
+            AddReward(80);
             if (currentCheckpoint == CheckPoint1)
             {
                 currentCheckpoint = CheckPoint2;
