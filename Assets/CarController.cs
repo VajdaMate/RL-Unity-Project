@@ -51,7 +51,7 @@ public class CarController : Agent
         float turnTorque = steerInput * steeringSpeed;
         rb.AddTorque(transform.up * turnTorque);
         
-        //Másik megoldás
+        //Mï¿½sik megoldï¿½s
         //transform.Translate(Vector3.forward * moveInput * moveSpeed * Time.deltaTime);
         //transform.Rotate(Vector3.up * rotateInput * turnSpeed * Time.deltaTime);
         */
@@ -133,9 +133,10 @@ public class CarController : Agent
         }
         
     }
-    private void OnTriggerEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.collider.tag == "Checkpoint1")
+        if (collider.tag == "Checkpoint")
         {
             AddReward(80);
             if (currentCheckpoint == CheckPoint1)
