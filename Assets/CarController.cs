@@ -20,8 +20,8 @@ public class CarController : Agent
     private Vector3 startingPosition = new Vector3(6f, 0.5351701f, 4f);
     private List<Vector3> checkpointPositions = new List<Vector3>
     {
-        new Vector3(3.8f, 0.6f, -10.49f),
-        new Vector3(-2.58f, 0.6f, -10.49f),
+        new Vector3(3.67f, 0.6f, -7.29f),
+        new Vector3(-0.04f, 0.6f, -10.56f),
     };
     private int atCheckpoint = 0;
 
