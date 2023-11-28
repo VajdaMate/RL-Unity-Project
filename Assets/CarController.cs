@@ -7,11 +7,7 @@ using Unity.MLAgents.Sensors;
 
 public class CarController : Agent
 {
-    
     public Transform CheckPoint;
-    public Transform Goal;
-
-
     private float accelerationSpeed = 275f;
     private float steeringSpeed = 250f;
     private Rigidbody rb;
@@ -22,11 +18,11 @@ public class CarController : Agent
     {
         new Vector3(3.67f, 0.6f, -7.29f),
         new Vector3(-0.04f, 0.6f, -10.56f),
+        new Vector3(-2.453124f, 0.6f, -1.16f)
+
     };
     private int atCheckpoint = 0;
 
-
-    // Start is called before the first frame update
     void Start()    
     {
         rb = GetComponent<Rigidbody>();
@@ -108,29 +104,30 @@ public class CarController : Agent
             AddReward(-200);
             EndEpisode();
         }
-        
-        if (collision.collider.tag == "Goal")
-        {
-            AddReward(100);
-            EndEpisode();
-        }
-        
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Checkpoint")
         {
-            AddReward(50);
-            atCheckpoint++;
-            if (atCheckpoint==1)
+            if(atCheckpoint != checkpointPositions.Count-1)
             {
-                CheckPoint.localPosition = checkpointPositions[1];
+                AddReward(50);
+                atCheckpoint++;
+                if (atCheckpoint != checkpointPositions.Count - 1)
+                {
+                    CheckPoint.localPosition = checkpointPositions[atCheckpoint];
+                }
+                else
+                {
+                    CheckPoint.localPosition = checkpointPositions[checkpointPositions.Count];
+                }
             }
             else
             {
-                CheckPoint = Goal;
-            }
+                AddReward(100);
+                EndEpisode();
+            } 
         }
     }
 }
