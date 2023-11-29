@@ -746,9 +746,8 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 1500
+  MaxStep: 1100
   CheckPoint: {fileID: 6521476855641767058}
-  Goal: {fileID: 7279573648225196445}
 --- !u!65 &2902565256298107240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2568,7 +2567,7 @@ Transform:
   m_GameObject: {fileID: 5730094837799941375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.67, y: 0, z: -7.29}
+  m_LocalPosition: {x: 3.69, y: 0, z: -5.1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -16,8 +16,10 @@ public class CarController : Agent
     private Vector3 startingPosition = new Vector3(6f, 0.5351701f, 4f);
     private List<Vector3> checkpointPositions = new List<Vector3>
     {
-        new Vector3(3.67f, 0.6f, -7.29f),
-        new Vector3(-0.04f, 0.6f, -10.56f),
+        new Vector3(3.69f, 0.6f, -5.1f),
+        new Vector3(2.97f, 0.6f, -9.27f),
+        new Vector3(0.18f, 0.6f, -9.62f),
+        new Vector3(-2.3f, 0.6f, -9.62f),
         new Vector3(-2.453124f, 0.6f, -1.16f),
 
     };
@@ -62,12 +64,10 @@ public class CarController : Agent
         float turnTorque = actionSteering * steeringSpeed;
         rb.AddTorque(transform.up * turnTorque);
 
-        float distance = Vector3.Distance(CheckPoint.localPosition, transform.localPosition);
-        
-
         //transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
         //transform.rotation = Quaternion.Euler(new Vector3(0, actionSteering * 180, 0));
 
+        float distance = Vector3.Distance(CheckPoint.localPosition, transform.localPosition);
         AddReward(-distance / 100); // [0, 0.1]
     }
 
@@ -110,18 +110,11 @@ public class CarController : Agent
     {
         if (collider.tag == "Checkpoint")
         {
-            if(atCheckpoint < 2)
+            if(atCheckpoint < 4)
             {
                 AddReward(50);
                 atCheckpoint++;
-                if (atCheckpoint != 2)
-                {
-                    CheckPoint.localPosition = checkpointPositions[atCheckpoint];
-                }
-                else
-                {
-                    CheckPoint.localPosition = checkpointPositions[2];
-                }
+                CheckPoint.localPosition = checkpointPositions[atCheckpoint];
             }
             else
             {
