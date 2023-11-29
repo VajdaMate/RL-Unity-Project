@@ -18,7 +18,7 @@ behaviors:
         strength: 1.0
       curiosity:
           gamma: 0.99
-          strength: 0.04
+          strength: 0.03
           network_settings:
             hidden_units: 256
         #learning_rate: 0.0003
