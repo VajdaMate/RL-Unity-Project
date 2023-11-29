@@ -16,7 +16,9 @@ public class CarController : Agent
     private Vector3 startingPosition = new Vector3(6f, 0.5351701f, 4f);
     private List<Vector3> checkpointPositions = new List<Vector3>
     {
-        new Vector3(3.69f, 0.6f, -5.1f),
+        new Vector3(5.29f, 0.6f, 0.07f),
+        new Vector3(5.29f, 0.6f, -3.45f),
+        new Vector3(3.69f, 0.6f, -7.23f),
         new Vector3(2.97f, 0.6f, -9.27f),
         new Vector3(0.18f, 0.6f, -9.62f),
         new Vector3(-2.3f, 0.6f, -9.62f),
@@ -107,7 +109,7 @@ public class CarController : Agent
     {
         if (collider.tag == "Checkpoint")
         {
-            if(atCheckpoint < 4)
+            if(atCheckpoint < ((checkpointPositions.Count)-1))
             {
                 AddReward(0.1f);
                 atCheckpoint++;
