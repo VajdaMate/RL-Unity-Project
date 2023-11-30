@@ -9,7 +9,7 @@ public class CarController : Agent
 {
     public Transform CheckPoint;
     private float accelerationSpeed = 275f;
-    private float steeringSpeed = 250f;
+    private float steeringSpeed = 295f;
     private Rigidbody rb;
     
     
@@ -19,10 +19,10 @@ public class CarController : Agent
         new Vector3(5.29f, 0.6f, 0.07f),
         new Vector3(5.29f, 0.6f, -3.45f),
         new Vector3(3.69f, 0.6f, -7.23f),
-        new Vector3(2.97f, 0.6f, -9.27f),
-        new Vector3(1.14f, 0.6f, -9.74f),
-        new Vector3(0.18f, 0.6f, -9.62f),
-        new Vector3(-2.3f, 0.6f, -7.54f),
+        new Vector3(4f, 0.6f, -9.27f),
+        new Vector3(1.14f, 0.6f, -11.6f),
+        new Vector3(-1.3f, 0.6f, -11.6f),
+        new Vector3(-2.46f, 0.6f, -6.98f),
         new Vector3(-2.453f, 0.6f, -1.16f),
 
     };
