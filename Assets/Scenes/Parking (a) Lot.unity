@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -359,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -521,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -602,7 +602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -683,7 +683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -764,7 +764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
@@ -849,11 +849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521476855641767058, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.29
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 6521476855641767058, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.45
+      value: -6.54
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BehaviorName
@@ -861,11 +861,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6709526337578934589, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_BrainParameters.NumStackedVectorObservations
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997946552666719530, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997946552666719530, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997946552666719530, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6997946552666719530, guid: cd418787b9bb8514585ec1da2e48a72d, type: 3}
       propertyPath: m_IsTrigger
