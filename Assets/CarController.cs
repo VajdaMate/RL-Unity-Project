@@ -24,6 +24,7 @@ public class CarController : Agent
         new Vector3(-0.21f, 0.6f, -10.83f),
         new Vector3(-2.39f, 0.6f, -8.67f),
         new Vector3(-2.57f, 0.6f, -6.54f),
+        new Vector3(-2.57f, 0.6f, -3.96f),
         new Vector3(-2.453f, 0.6f, -1.16f),
 
     };
