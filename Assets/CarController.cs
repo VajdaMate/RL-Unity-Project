@@ -9,9 +9,9 @@ public class CarController : Agent
 {
     public Transform CheckPoint;
     private float accelerationSpeed = 5f;
-    private float currentRotation = 180;
-    
-    
+    private float currentRotation;
+    private int atCheckpoint = 0;
+
     private Vector3 startingPosition = new Vector3(6f, 0.5351701f, 4f);
     private List<Vector3> checkpointPositions = new List<Vector3>
     {
@@ -27,7 +27,7 @@ public class CarController : Agent
         new Vector3(-2.453f, 0.6f, -1.16f),
 
     };
-    private int atCheckpoint = 0;
+    
 
     void Start()    
     {
@@ -42,7 +42,7 @@ public class CarController : Agent
     {
         transform.localPosition = startingPosition;
         transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        currentRotation = transform.rotation.y;
+        currentRotation = 180;
         atCheckpoint = 0;
         CheckPoint.localPosition = checkpointPositions[atCheckpoint];
     }
@@ -67,9 +67,9 @@ public class CarController : Agent
         //float turnTorque = actionSteering * steeringSpeed;
         //rb.AddTorque(transform.up * turnTorque);
 
-        float rotationInput = actionSteering * 30;
-        currentRotation = currentRotation + rotationInput;
-        transform.Translate(actionSpeed * Vector3.forward *accelerationSpeed* Time.fixedDeltaTime);
+        float rotationInput = actionSteering * 2;
+        currentRotation += rotationInput;
+        transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
         transform.rotation = Quaternion.Euler(new Vector3(0, currentRotation, 0));
     }
 
@@ -78,7 +78,7 @@ public class CarController : Agent
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
 
         // Reset actions
-        //continuousActions[0] = 0f; // Speed
+        continuousActions[0] = 0f; // Speed
         //continuousActions[1] = 0f; // Turning
 
         // Forward/Backward Movement
