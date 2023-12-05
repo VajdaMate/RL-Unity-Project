@@ -24,6 +24,7 @@ public class CarController : Agent
         new Vector3(-0.21f, 0.6f, -10.83f),
         new Vector3(-2.39f, 0.6f, -8.67f),
         new Vector3(-2.57f, 0.6f, -6.54f),
+        new Vector3(-2.57f, 0.6f, -5.15f),
         new Vector3(-2.57f, 0.6f, -3.96f),
         new Vector3(-2.453f, 0.6f, -1.16f),
 
@@ -72,6 +73,9 @@ public class CarController : Agent
         currentRotation += rotationInput;
         transform.Translate(actionSpeed * Vector3.forward * accelerationSpeed * Time.fixedDeltaTime);
         transform.rotation = Quaternion.Euler(new Vector3(0, currentRotation, 0));
+        
+        float distance = Vector3.Distance(CheckPoint.localPosition, transform.localPosition);
+        AddReward(-distance / 10000);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
