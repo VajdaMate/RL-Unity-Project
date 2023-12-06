@@ -1,0 +1,65 @@
+{
+    "Park": {
+        "checkpoints": [
+            {
+                "steps": 2499890,
+                "file_path": "results\\BaseConfig-LessTime-2\\Park\\Park-2499890.onnx",
+                "reward": 9.99547574465925,
+                "creation_time": 1701856196.1376941,
+                "auxillary_file_paths": [
+                    "results\\BaseConfig-LessTime-2\\Park\\Park-2499890.pt"
+                ]
+            },
+            {
+                "steps": 2999953,
+                "file_path": "results\\BaseConfig-LessTime-2\\Park\\Park-2999953.onnx",
+                "reward": 10.343570701339665,
+                "creation_time": 1701856852.0768979,
+                "auxillary_file_paths": [
+                    "results\\BaseConfig-LessTime-2\\Park\\Park-2999953.pt"
+                ]
+            },
+            {
+                "steps": 3499967,
+                "file_path": "results\\BaseConfig-LessTime-2\\Park\\Park-3499967.onnx",
+                "reward": 10.263047484556834,
+                "creation_time": 1701857516.5974445,
+                "auxillary_file_paths": [
+                    "results\\BaseConfig-LessTime-2\\Park\\Park-3499967.pt"
+                ]
+            },
+            {
+                "steps": 3999891,
+                "file_path": "results\\BaseConfig-LessTime-2\\Park\\Park-3999891.onnx",
+                "reward": 10.99661328792572,
+                "creation_time": 1701858172.6969697,
+                "auxillary_file_paths": [
+                    "results\\BaseConfig-LessTime-2\\Park\\Park-3999891.pt"
+                ]
+            },
+            {
+                "steps": 4000019,
+                "file_path": "results\\BaseConfig-LessTime-2\\Park\\Park-4000019.onnx",
+                "reward": 10.99661328792572,
+                "creation_time": 1701858172.7910748,
+                "auxillary_file_paths": [
+                    "results\\BaseConfig-LessTime-2\\Park\\Park-4000019.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4000019,
+            "file_path": "results\\BaseConfig-LessTime-2\\Park.onnx",
+            "reward": 10.99661328792572,
+            "creation_time": 1701858172.7910748,
+            "auxillary_file_paths": [
+                "results\\BaseConfig-LessTime-2\\Park\\Park-4000019.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
